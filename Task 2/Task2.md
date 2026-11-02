@@ -5,10 +5,15 @@
 Please add your SQL query below AND add explanation of the query: 
 
 ```
-[Insert Code Here]
+[Insert Code HERE]
+SELECT e.FirstName, COUNT(o.OrderID) AS NumberOfOrders
+   FROM Employees AS e
+   LEFT JOIN Orders AS o ON e.EmployeeID = o.EmployeeID
+   GROUP BY e.FirstName
+   ORDER BY NumberOfOrders DESC
 ```
 ```
-[Insert Explanation Here]
+[Insert Explanation Here] I joined the Employees and Orders tables on EmployeeID, grouped by first name, and counted the orders for each employee.
 ```
 
 4. For submission commit and push this .md file to Github
